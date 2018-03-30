@@ -3,10 +3,25 @@
   "version": "1.0.0",
   "description": "leetcode js",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ava": "ava --verbose"
+  },
+  "ava": {
+    "files": [
+      "./src/*.test.js"
+    ],
+    "failFast": false,
+    "tap": false
+  },
   "repository": "https://github.com/zhangporco/leetcode-challenge.git",
   "author": "Porco home <zhangporco@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "ava": "^0.25.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/zhangporco/leetcode-challenge/issues"
+  },
+  "homepage": "https://github.com/zhangporco/leetcode-challenge"
 }
