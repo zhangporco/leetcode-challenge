@@ -1,0 +1,12 @@
+{
+  "name": "leetcode-challenge",
+  "version": "1.0.0",
+  "description": "leetcode js",
+  "main": "index.js",
+  "repository": "https://github.com/zhangporco/leetcode-challenge.git",
+  "author": "Porco home <zhangporco@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ava": "^0.25.0"
+  }
+}
