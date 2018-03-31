@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/*.test.js"
+      "./src/maxPointsLine.test.js"
     ],
     "failFast": false,
     "tap": false
