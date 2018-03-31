@@ -1,5 +1,9 @@
 const test = require('ava');
 
+/**
+ * 判断是否是数字
+ * @param {*} s 
+ */
 const isNumber = function(s) {
     s = s.replace(/^\s+|\s+$/g,"");
     if (!s) return false; 
