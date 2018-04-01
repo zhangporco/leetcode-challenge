@@ -1,5 +1,6 @@
 const test = require('ava');
 /**
+ * 完成
  * Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
  */
 const maxPoints = function(points) {
@@ -116,7 +117,7 @@ test('max points0', t => {
 });
 
 
-test('max points0', t => {
+test('max points1', t => {
     var points = [
         { x: 84, y: 250 },
         { x: 1, y: 0 },
@@ -132,7 +133,7 @@ test('max points0', t => {
     t.is(res, 6);
 });
 
-test('max points0', t => {
+test('max points2', t => {
     var points = [
         { x: 0, y: 0 },
         { x: 1, y: 1 },
@@ -142,7 +143,7 @@ test('max points0', t => {
     t.is(res, 3);
 });
 
-test('max points1', t => {
+test('max points3', t => {
     var points = [
         { x: 1, y: 1 },
         { x: 2, y: 2 },
@@ -155,7 +156,7 @@ test('max points1', t => {
     t.is(res, 3);
 });
 
-test('max points2', t => {
+test('max points4', t => {
     var points = [
         { x: 0, y: 0 },
         { x: 0, y: 0 },
@@ -164,7 +165,7 @@ test('max points2', t => {
     t.is(res, 2);
 });
 
-test('max points3', t => {
+test('max points5', t => {
     var points = [
         { x: 0, y: 0 },
     ];
@@ -172,7 +173,7 @@ test('max points3', t => {
     t.is(res, 1);
 });
 
-test('max points4', t => {
+test('max points6', t => {
     var points = [
         { x: 1, y: 1 },
         { x: 1, y: 1 },
@@ -183,7 +184,7 @@ test('max points4', t => {
     t.is(res, 4);
 });
 
-test('max points5', t => {
+test('max points7', t => {
     var points = [
         { x: 0, y: 0 },
         { x: 1, y: 1 },
@@ -193,7 +194,7 @@ test('max points5', t => {
     t.is(res, 2);
 });
 
-test('max points6', t => {
+test('max points8', t => {
     var points = [
         { x: 0, y: 0 },
         { x: 1, y: 0 }

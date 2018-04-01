@@ -1,6 +1,7 @@
 const test = require('ava');
 
 /**
+ * 完成
  * 判断是否是数字
  * @param {*} s 
  */

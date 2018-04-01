@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/maxPointsLine.test.js"
+      "./src/sortString.test.js"
     ],
     "failFast": false,
     "tap": false
