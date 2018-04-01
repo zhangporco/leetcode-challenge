@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/sortString.test.js"
+      "./src/singleNumber.test.js"
     ],
     "failFast": false,
     "tap": false

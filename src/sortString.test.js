@@ -1,6 +1,7 @@
 const test = require('ava');
 
 /**
+ * 完成
  * S and T are strings composed of lowercase letters. In S, no letter occurs more than once.
  * S was sorted in some custom order previously. 
  * We want to permute the characters of T so that they match the order that S was sorted. 
