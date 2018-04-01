@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/singleNumber.test.js"
+      "./src/rotateString.test.js"
     ],
     "failFast": false,
     "tap": false
