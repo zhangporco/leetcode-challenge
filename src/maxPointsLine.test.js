@@ -4,9 +4,9 @@ const test = require('ava');
  * Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
  */
 const maxPoints = function(points) {
-    var getMax = function(array) {
-        var max = 0;
-        for (var i=0; i<array.length; i++) {
+    const getMax = function(array) {
+        let max = 0;
+        for (let i=0; i<array.length; i++) {
             if (array[i].num > max) {
                 max = array[i].num;
             }
@@ -14,8 +14,8 @@ const maxPoints = function(points) {
         return max;
     }
 
-    var findK = function(array, k) {
-        for (var i=0; i<array.length; i++) {
+    const findK = function(array, k) {
+        for (let i=0; i<array.length; i++) {
             if (array[i].k === k) {
                 return i;
             }
@@ -27,25 +27,25 @@ const maxPoints = function(points) {
      * @param {*} a 
      * @param {*} b 
      */
-    var getK = function(a, b) {
-        var gcd = function(a, b) {
+    const getK = function(a, b) {
+        const gcd = function(a, b) {
             if (b === 0) return a;
             return gcd(b, a%b);
         }
-        var dx = a.x - b.x;
-        var dy = a.y - b.y;
-        var d = gcd(dx, dy);
+        let dx = a.x - b.x;
+        let dy = a.y - b.y;
+        let d = gcd(dx, dy);
         dx = Math.floor(dx / d);
         dy = Math.floor(dy / d);
-        var pair = "" + dx + "," + dy;
+        let pair = "" + dx + "," + dy;
         return pair;
     }
 
-    var max = 0;
-    for (var i=0; i<points.length; i++) {
-        var slopes = [];
-        var same = 1, vertical = 0;
-        for (var j=i + 1; j<points.length; j++) {
+    let max = 0;
+    for (let i=0; i<points.length; i++) {
+        let slopes = [];
+        let same = 1, vertical = 0;
+        for (let j=i + 1; j<points.length; j++) {
             if (points[i].x == points[j].x && points[i].y == points[j].y) {
                 same++;
                 continue;
@@ -54,17 +54,17 @@ const maxPoints = function(points) {
                 vertical++;
                 continue;
             }
-            var k = getK(points[i], points[j]);
+            let k = getK(points[i], points[j]);
 
-            var index = findK(slopes, k);
+            let index = findK(slopes, k);
             if (index > -1) {
                 slopes[index].num += 1;
             } else {
                 slopes.push({ k: k, num: 1 });
             }
         }
-        var sMax = getMax(slopes);
-        var v = (sMax > vertical ? sMax : vertical) + same;
+        let sMax = getMax(slopes);
+        let v = (sMax > vertical ? sMax : vertical) + same;
         max = v > max ? v :max;
     }
     return max;
