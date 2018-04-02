@@ -22,7 +22,34 @@ const reverseWords = function(s) {
     return res;
 };
 
+/**
+ * Given an input string, reverse the string word by word.
+For example,
+Given s = "the sky is blue",
+return "blue is sky the".
+ * @param {string} str
+ * @returns {string}
+ */
+const reverseWords2 = function(str) {
+    const array = str.replace(/\s+/g, ',').split(',');
+    let res = '';
+    for (let i = array.length - 1; i >= 0; i--) {
+        if (array[i] === '') {
+            continue;
+        }
+        res += array[i] + ' ';
+    }
+    return res.replace(/^\s+|\s+$/g, '');
+};
+
 test('reverse words 0', t => {
     const res = reverseWords("Let's take LeetCode contest");
     t.is(res, "s'teL ekat edoCteeL tsetnoc");
+});
+
+test('reverse words 0', t => {
+    const res = reverseWords2("a \n"+
+    "yqo! qjktum ym. .fumuhau");
+    console.log(res);
+    t.pass(res, "a");
 });

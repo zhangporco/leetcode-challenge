@@ -27,7 +27,7 @@ const singleNumber = function(nums) {
 };
 
 /**
- * 完成
+ * 完成，但是不完美
  * 一个 number 数组，有两个数是唯一的，其他的数字都会出现三次
  * @param {number[]} nums
  * @return {number}
