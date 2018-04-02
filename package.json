@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/threeSum.test.js"
+      "./src/sumIntegers.test.js"
     ],
     "failFast": false,
     "tap": false
