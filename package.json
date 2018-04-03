@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/sumIntegers.test.js"
+      "./src/lengthOfLongestSubstring.test.js"
     ],
     "failFast": false,
     "tap": false

@@ -6,6 +6,7 @@ const test = require('ava');
  * @param {*} s 
  */
 const isNumber = function(s) {
+    // 去除两头空格
     s = s.replace(/^\s+|\s+$/g,"");
     if (!s) return false; 
     var val = +s;
