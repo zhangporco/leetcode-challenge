@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/lengthOfLongestSubstring.test.js"
+      "./src/longestCommonPrefix.test.js"
     ],
     "failFast": false,
     "tap": false
