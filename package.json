@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/longestCommonPrefix.test.js"
+      "./src/invildPassword.test.js"
     ],
     "failFast": false,
     "tap": false
