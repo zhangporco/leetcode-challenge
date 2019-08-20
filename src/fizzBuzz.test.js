@@ -8,27 +8,27 @@ const test = require('ava');
  * @param {number} n
  * @return {string[]}
  */
-const fizzBuzz = function(n) {
-    const res = [];
-    for (let i = 1; i <= n; i++) {
-        let str = i;
-        if (i % 3 === 0) {
-            str = 'Fizz'
-        }
-        if (i % 5 === 0) {
-            if (i % 3 === 0) {
-                str += 'Buzz'
-            } else {
-                str = 'Buzz'
-            }
-        }
-        res.push(str + '');
-    }
-    return res;
+const fizzBuzz = function (n) {
+	const res = [];
+	for (let i = 1; i <= n; i++) {
+		let str = i;
+		if (i % 3 === 0) {
+			str = 'Fizz'
+		}
+		if (i % 5 === 0) {
+			if (i % 3 === 0) {
+				str += 'Buzz'
+			} else {
+				str = 'Buzz'
+			}
+		}
+		res.push(str + '');
+	}
+	return res;
 };
 
 test('fizz buzz 0', t => {
-    const res = fizzBuzz(15);
-    console.log(res);
-    t.pass();
+	const res = fizzBuzz(15);
+	console.log(res);
+	t.pass();
 });

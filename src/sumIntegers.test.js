@@ -9,11 +9,11 @@ const test = require('ava');
  * @return {number}
  */
 const getSum = (a, b) => {
-    return (a ^ b) + ((a & b) << 1)
+	return (a ^ b) + ((a & b) << 1)
 };
 
 test('sum intergers 0', t => {
-    const res = getSum(1, 2);
-    console.log(res);
-    t.pass(res);
+	const res = getSum(1, 2);
+	console.log(res);
+	t.pass(res);
 });

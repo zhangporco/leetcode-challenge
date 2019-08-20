@@ -8,25 +8,25 @@ const test = require('ava');
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 const moveZeroes = (nums) => {
-    let n = -1;
-    const move = (i) => {
-        n++;
-        if (n < nums.length) {
-            if (nums[i] === 0) {
-                nums.push(0);
-                nums.splice(i, 1);
-                move(i);
-            } else {
-                move(i + 1);
-            }
-        }
-    }
-    move(0);
-    return nums;
+	let n = -1;
+	const move = (i) => {
+		n++;
+		if (n < nums.length) {
+			if (nums[ i ] === 0) {
+				nums.push(0);
+				nums.splice(i, 1);
+				move(i);
+			} else {
+				move(i + 1);
+			}
+		}
+	}
+	move(0);
+	return nums;
 };
 
 test('move array 0', t => {
-    const array = [0, 0, 1];
-    const res = moveZeroes(array);
-    t.pass();
+	const array = [ 0, 0, 1 ];
+	const res = moveZeroes(array);
+	t.pass();
 });

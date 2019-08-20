@@ -6,24 +6,24 @@ const test = require('ava');
  * 找出这个唯一数
  * Note:
  * Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
- * @param {number[]} nums 
+ * @param {number[]} nums
  * @return {number}
  */
-const singleNumber = function(nums) {
-    const findOnce = () => {
-        if (nums && nums.length) {
-            const num = nums[nums.length - 1];
-            nums.pop();
-            const index = nums.indexOf(num);
-            if (index > -1) {
-                nums.splice(index, 1);
-                return findOnce();
-            } else {
-                return num;
-            }
-        }
-    }
-    return findOnce();
+const singleNumber = function (nums) {
+	const findOnce = () => {
+		if (nums && nums.length) {
+			const num = nums[ nums.length - 1 ];
+			nums.pop();
+			const index = nums.indexOf(num);
+			if (index > -1) {
+				nums.splice(index, 1);
+				return findOnce();
+			} else {
+				return num;
+			}
+		}
+	}
+	return findOnce();
 };
 
 /**
@@ -32,27 +32,27 @@ const singleNumber = function(nums) {
  * @param {number[]} nums
  * @return {number}
  */
-const singleNumber2 = function(nums) {
-    const findOnce = () => {
-        if (nums && nums.length) {
-            const num = nums[nums.length - 1];
-            nums.pop();
-            const index = nums.indexOf(num);
-            if (index > -1) {
-                nums.splice(index, 1);
-                const index2 = nums.indexOf(num);
-                if (index > -1) {
-                    nums.splice(index2, 1);
-                    return findOnce();
-                } else {
-                    return num;
-                }
-            } else {
-                return num;
-            }
-        }
-    }
-    return findOnce();
+const singleNumber2 = function (nums) {
+	const findOnce = () => {
+		if (nums && nums.length) {
+			const num = nums[ nums.length - 1 ];
+			nums.pop();
+			const index = nums.indexOf(num);
+			if (index > -1) {
+				nums.splice(index, 1);
+				const index2 = nums.indexOf(num);
+				if (index > -1) {
+					nums.splice(index2, 1);
+					return findOnce();
+				} else {
+					return num;
+				}
+			} else {
+				return num;
+			}
+		}
+	}
+	return findOnce();
 };
 
 /**
@@ -62,37 +62,37 @@ const singleNumber2 = function(nums) {
  * @param {number[]} nums
  * @return {number[]}
  */
-const singleNumber3 = function(nums) {
-    const res = [];
-    const findOnce = () => {
-        if (nums && nums.length) {
-            const num = nums[nums.length - 1];
-            nums.pop();
-            const index = nums.indexOf(num);
-            if (index > -1) {
-                nums.splice(index, 1);
-            } else {
-                res.push(num);
-            }
-            findOnce();
-        }
-    }
-    findOnce();
-    return res;
+const singleNumber3 = function (nums) {
+	const res = [];
+	const findOnce = () => {
+		if (nums && nums.length) {
+			const num = nums[ nums.length - 1 ];
+			nums.pop();
+			const index = nums.indexOf(num);
+			if (index > -1) {
+				nums.splice(index, 1);
+			} else {
+				res.push(num);
+			}
+			findOnce();
+		}
+	}
+	findOnce();
+	return res;
 };
 
 test('single number 0', t => {
-    const res = singleNumber([1,1,3,4,4,5,7,5,3]);
-    t.is(res, 7);
+	const res = singleNumber([ 1, 1, 3, 4, 4, 5, 7, 5, 3 ]);
+	t.is(res, 7);
 });
 
 test('single number 1', t => {
-    const res = singleNumber3([1,2,1,3,2,5]);
-    t.is(res[0], 5);
-    t.is(res[1], 3);
+	const res = singleNumber3([ 1, 2, 1, 3, 2, 5 ]);
+	t.is(res[ 0 ], 5);
+	t.is(res[ 1 ], 3);
 });
 
 test('single number 2', t => {
-    const res = singleNumber2([1,2,1,3,2,2,1]);
-    t.is(res, 3);
+	const res = singleNumber2([ 1, 2, 1, 3, 2, 2, 1 ]);
+	t.is(res, 3);
 });

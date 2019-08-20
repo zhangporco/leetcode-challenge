@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/invildPassword.test.js"
+      "./src/prefixSuffixSearch.test.js"
     ],
     "failFast": false,
     "tap": false
