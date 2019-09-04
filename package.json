@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/prefixSuffixSearch.test.js"
+      "./src/addTwoNumbers.test.js"
     ],
     "failFast": false,
     "tap": false
