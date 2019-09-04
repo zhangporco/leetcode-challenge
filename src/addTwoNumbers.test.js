@@ -8,20 +8,98 @@ const test = require('ava');
  * @author: Porco
  * @created: 2019/9/4 3:01 PM
  */
-const addTwoNumbers = function (l1, l2) {
-	const getNum = function(list) {
+const addTwoNumbers = function(l1, l2) {
+	function ListNode(val) {
+		this.val = val;
+		this.next = null;
+	}
+	var sum  = 0;
+	var added = false;
+	var target = new ListNode(0);
+	var result = target;
+	
+	while(l1 !== null || l2 !== null){
+		target.next = new ListNode(0);
+		target = target.next;
+		//不是链尾
+		if(l1 !== null){
+			sum += l1.val;
+			l1 = l1.next;
+		}
+		if(l2 !== null){
+			sum += l2.val;
+			l2 = l2.next;
+		}
+		if(added){
+			sum++;
+			added = false;
+		}
+		if(sum >= 10){
+			added = true;
+			sum -= 10;
+		}
+		target.val = sum;
+		sum = 0;
+	}
+	if(added){
+		target.next = new ListNode(1);
+	}
+	result = result.next;
+	return result;
+};
+
+const addTwoNumbers2 = function (l1, l2) {
+	function ListNode(val) {
+		this.val = val;
+		this.next = null;
+	}
+	
+	const getNum = (node, array) => {
+		array.push(node.val);
+		if (node.next) {
+			return getNum(node.next, array);
+		} else {
+			return array.reverse();
+		}
+	};
+	const toNum = (array) => {
 		let num = '';
-		for (let i = list.length - 1; i >= 0; i--) {
-			num += list[i];
+		for (const v of array) {
+			num += v;
 		}
 		return Number(num);
 	};
-	const num1 = getNum(l1);
-	const num2 = getNum(l2);
-	return (num1 + num2 + '').split('').reverse();
+	
+	const setListNode = (node, array) => {
+		console.log(node);
+		node.next = new ListNode(array[0]);
+		if (array.length > 1) {
+			return setListNode(node.next, array.slice(1, array.length));
+		}
+		return node;
+	};
+	
+	const num1 = toNum(getNum(l1, []));
+	const num2 = toNum(getNum(l2, []));
+	const array = (num1 + num2 + '').split('');
+	const node = new ListNode(array[0]);
+	return setListNode(node, array.slice(1, array.length));
 };
 
+function ListNode(val) {
+	this.val = val;
+	this.next = null;
+}
+
 test('addTwoNumbers 1', t => {
-	const res = addTwoNumbers([ 2, 4, 3 ], [ 5, 6, 4 ]);
-	t.pass(res, [ 7, 0, 8 ]);
+	const num1 = new ListNode(2);
+	num1.next = new ListNode(4);
+	num1.next.next = new ListNode(3);
+	const num2 = new ListNode(5);
+	num2.next = new ListNode(6);
+	num2.next.next = new ListNode(4);
+
+	const res = addTwoNumbers(num1, num2);
+	console.log(res);
+	t.is(res, [ 7, 0, 8 ]);
 });
