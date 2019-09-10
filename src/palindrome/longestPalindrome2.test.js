@@ -29,31 +29,30 @@ const longestPalindrome2 = (s) => {
 	// 	}
 	// }
 	// return len + max;
-	var set = new Set();
-	var count = 0;
-	for(var i=0; i<s.length; i++){
-		if(set.has(s[i])){
-			count +=2;
-			set.delete(s[i])
-		}else{
-			set.add(s[i])
+	const set = new Set();
+	let count = 0;
+	for (let i = 0; i < s.length; i++) {
+		if (set.has(s[ i ])) {
+			count += 2;
+			set.delete(s[ i ])
+		} else {
+			set.add(s[ i ])
 		}
 	}
-	return set.size>0 ? count+1 : count;
+	return set.size > 0 ? count + 1 : count;
 };
 
-// test('longestPalindrome 1', t => {
-// 	const res = longestPalindrome2('babadABV');
-// 	t.is(res, 5);
-// });
-//
-// test('longestPalindrome 2', t => {
-// 	const res = longestPalindrome2('abccccdd');
-// 	t.is(res, 7);
-// });
+test('longestPalindrome 1', t => {
+	const res = longestPalindrome2('babadABV');
+	t.is(res, 5);
+});
+
+test('longestPalindrome 2', t => {
+	const res = longestPalindrome2('abccccdd');
+	t.is(res, 7);
+});
 
 test('longestPalindrome 3', t => {
 	const res = longestPalindrome2('civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth');
-	console.log(res);
-	t.pass(res, 7);
+	t.is(res, 983);
 });
