@@ -8,27 +8,6 @@ const test = require('ava');
  * @created: 2019/9/9 5:43 PM
  */
 const longestPalindrome2 = (s) => {
-	// const obj = {};
-	// const array = s.split('');
-	// for (const char of array) {
-	// 	if (obj[char]) {
-	// 		obj[char] += 1;
-	// 	} else {
-	// 		obj[char] = 1;
-	// 	}
-	// }
-	// console.log(obj);
-	// let len = 0;
-	// let max = 0;
-	// const keys = Object.keys(obj);
-	// for (const k of keys) {
-	// 	if (obj[k] % 2 === 0) {
-	// 		len += obj[k];
-	// 	} else if (obj[k] > max) {
-	// 		max = obj[k];
-	// 	}
-	// }
-	// return len + max;
 	const set = new Set();
 	let count = 0;
 	for (let i = 0; i < s.length; i++) {
