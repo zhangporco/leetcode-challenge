@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/palindrome/longestPalindrome2.test.js"
+      "./src/big-number/addStrings.test.js"
     ],
     "failFast": false,
     "tap": false
