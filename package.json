@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/tree/maxDepth.test.js"
+      "./src/palindrome/longestPalindrome2.test.js"
     ],
     "failFast": false,
     "tap": false

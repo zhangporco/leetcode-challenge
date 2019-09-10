@@ -1,6 +1,7 @@
 const test = require('ava');
 
 /**
+ * 二叉树的最大深度
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
@@ -8,43 +9,47 @@ const test = require('ava');
  * }
  */
 const maxDepth = (root) => {
-	if (!root || root.length === 0) return 0;
-	let i = 0;
-	let sum = 0;
-	let boo = true;
-	while (boo) {
-		sum += Math.pow(2, i);
-		if (sum <= root.length && sum + Math.pow(2, i + 1) > root.length) {
-			boo = false;
+	let max = 0;
+	const depth = (tree, i) => {
+		tree.i = ++i;
+		if (tree.left) {
+			depth(tree.left, tree.i);
 		}
-		i++;
-	}
-	return i;
+		if (tree.right) {
+			depth(tree.right, tree.i);
+		}
+		if (!tree.left && !tree.right && tree.i > max) {
+			max = tree.i;
+		}
+	};
+	depth(root, 0);
+	console.log(root);
+	return max;
 };
 
-test('maxDepth 1', t => {
-	const tree = {
-		val: 3,
+const tree = {
+	val: 3,
+	left: {
+		val: 9,
+		left: null,
+		right: null,
+	},
+	right: {
+		val: 20,
 		left: {
-			val: 9,
+			val: 15,
 			left: null,
 			right: null,
 		},
 		right: {
-			val: 20,
-			left: {
-				val: 15,
-				left: null,
-				right: null,
-			},
-			right: {
-				val: 7,
-				left: null,
-				right: null,
-			},
+			val: 7,
+			left: null,
+			right: null,
 		},
-	};
-	const res = maxDepth([3,9,20,null,null,15,7]);
+	},
+};
+test('maxDepth 1', t => {
+	const res = maxDepth(tree);
 	console.log(res);
 	t.pass(res, false);
 });
