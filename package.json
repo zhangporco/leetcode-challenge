@@ -9,7 +9,7 @@
   },
   "ava": {
     "files": [
-      "./src/big-number/addStrings.test.js"
+      "./src/test/test.test.js"
     ],
     "failFast": false,
     "tap": false
